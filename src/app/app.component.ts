@@ -14,8 +14,5 @@ import {PersonInputComponent} from "./persons/person-input.component";
 })
 export class AppComponent {
   title = 'angular-testapp';
-  persons: string[] = ["Max", "Manuel", 'Anna']
-  onPersonCreated(name:string){
-    this.persons.push(name)
-  }
+
 }
