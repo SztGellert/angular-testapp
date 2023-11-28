@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {PersonsService} from "./persons.service";
 
 
 @Component({
@@ -10,5 +11,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './persons.component.css'
 })
 export class PersonsComponent {
-  @Input() personList: string[] = [];
+  personList: string[] = [];
+  constructor(prsService: PersonsService) {
+    this.personList = prsService.persons;
+  }
+
 }
