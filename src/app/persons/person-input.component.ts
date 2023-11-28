@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, Output, EventEmitter} from "@angular/core";
 import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 
@@ -11,9 +11,11 @@ import {FormsModule} from "@angular/forms";
 })
 
 export class PersonInputComponent {
+  @Output() personCreate = new EventEmitter<string>();
   enteredPersonName = '';
   onCreatePerson() {
     console.log(this.enteredPersonName);
+    this.personCreate.emit(this.enteredPersonName);
     this.enteredPersonName = '';
   }
 }
