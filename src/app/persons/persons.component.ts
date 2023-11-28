@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {PersonsService} from "./persons.service";
 
@@ -10,10 +10,14 @@ import {PersonsService} from "./persons.service";
   templateUrl: './persons.component.html',
   styleUrl: './persons.component.css'
 })
-export class PersonsComponent {
+export class PersonsComponent implements OnInit{
   personList: string[] = [];
-  constructor(prsService: PersonsService) {
-    this.personList = prsService.persons;
+
+  constructor(private prsService: PersonsService) {
+  }
+
+  ngOnInit() {
+    this.personList = this.prsService.persons;
   }
 
 }
