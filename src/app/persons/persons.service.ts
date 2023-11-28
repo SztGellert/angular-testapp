@@ -5,5 +5,6 @@ export class PersonsService{
   persons: string[] = ["Max", "Manuel", 'Anna']
   addPerson(name:string){
     this.persons.push(name);
+    console.log(this.persons)
   }
 }
