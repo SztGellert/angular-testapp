@@ -14,15 +14,17 @@ import {Subscription} from "rxjs";
 export class PersonsComponent implements OnInit, OnDestroy {
   personList: string[] = [];
   private personListSubs: Subscription = new Subscription;
-
+  isFetching = false;
   constructor(private prsService: PersonsService) {
   }
 
   ngOnInit() {
     this.personListSubs = this.prsService.personsChanged.subscribe(persons => {
       this.personList = persons;
+      this.isFetching =false;
       }
     );
+    this.isFetching = true;
     this.prsService.fetchPersons();
 
   }
