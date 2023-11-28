@@ -20,4 +20,8 @@ export class PersonsComponent implements OnInit{
     this.personList = this.prsService.persons;
   }
 
+  onRemovePerson(personName: string) {
+    this.prsService.removePersons(personName);
+  }
+
 }
