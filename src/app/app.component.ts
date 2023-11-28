@@ -4,7 +4,6 @@ import {RouterLink, RouterOutlet} from '@angular/router';
 import {PersonsComponent} from "./persons/persons.component";
 import {PersonInputComponent} from "./persons/person-input.component";
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
