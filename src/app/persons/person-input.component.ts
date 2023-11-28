@@ -9,4 +9,8 @@ import {CommonModule} from "@angular/common";
   styleUrls: ['./person-input.component.css']
 })
 
-export class PersonInputComponent {}
+export class PersonInputComponent {
+  onCreatePerson(personName: string) {
+    console.log(personName)
+  }
+}
