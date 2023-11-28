@@ -1,16 +1,19 @@
 import {Component} from "@angular/core";
 import {CommonModule} from "@angular/common";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: "app-person-input",
   templateUrl: './person-input.component.html',
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   standalone: true,
   styleUrls: ['./person-input.component.css']
 })
 
 export class PersonInputComponent {
-  onCreatePerson(personName: string) {
-    console.log(personName)
+  enteredPersonName = '';
+  onCreatePerson() {
+    console.log(this.enteredPersonName);
+    this.enteredPersonName = '';
   }
 }
